@@ -101,7 +101,7 @@
     "hooks": {
       "commit-msg": "scripts/branchlint.sh && commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "scripts/ts-check.sh && scripts/copanlint.sh && lint-staged",
-      "pre-push": "npm run test && npm run analyze"
+      "pre-push": "if ! git diff-index --quiet HEAD --; then npm run test && npm run analyze; else echo 'No changes between local and remote'; fi"
     }
   },
   "lint-staged": {
