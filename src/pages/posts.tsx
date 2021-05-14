@@ -14,7 +14,17 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const PostPage = ({ allPostsData }) => {
+type PostData = {
+  id: string;
+  date: string;
+  title: string;
+};
+
+type PostPageProps = {
+  allPostsData: PostData[];
+};
+
+const PostPage = ({ allPostsData }: PostPageProps) => {
   return (
     <Layout withHeader={true} withFooter={true}>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
