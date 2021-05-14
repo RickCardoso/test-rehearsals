@@ -17,7 +17,7 @@ export const Post: FC<PostProps> = ({ post }: PostProps): ReactElement => {
     <>
       <Typography variant="h4">{post.title}</Typography>
       <Typography variant="subtitle">{post.date}</Typography>
-      <Typography>
+      <Typography component="div">
         <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
       </Typography>
     </>

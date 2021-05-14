@@ -9,8 +9,8 @@ const title = 'a title';
 const date = 'a date';
 const contentHtml = 'a content';
 
-describe('Post: Post', () => {
-  describe('Rendering', () => {
+describe('<Post />', () => {
+  describe('rendering', () => {
     beforeEach(() => {
       setup({ post: { id, title, date, contentHtml } });
     });
