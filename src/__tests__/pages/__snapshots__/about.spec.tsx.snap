@@ -101,6 +101,17 @@ exports[`pages/about should render About page correctly 1`] = `
                 class="CopanNavigationItem-item-131"
               >
                 <a
+                  href="/posts"
+                  tabindex="0"
+                  target=""
+                >
+                  Blog
+                </a>
+              </li>
+              <li
+                class="CopanNavigationItem-item-131"
+              >
+                <a
                   href="/contact"
                   tabindex="0"
                   target=""
@@ -155,6 +166,17 @@ exports[`pages/about should render About page correctly 1`] = `
                       target=""
                     >
                       Home
+                    </a>
+                  </li>
+                  <li
+                    class="CopanNavigationItem-item-131 more"
+                  >
+                    <a
+                      href="/posts"
+                      tabindex="0"
+                      target=""
+                    >
+                      Blog
                     </a>
                   </li>
                   <li

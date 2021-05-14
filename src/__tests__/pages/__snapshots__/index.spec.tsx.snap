@@ -101,6 +101,17 @@ exports[`pages/index should render Index page correctly 1`] = `
                 class="CopanNavigationItem-item-132"
               >
                 <a
+                  href="/posts"
+                  tabindex="0"
+                  target=""
+                >
+                  Blog
+                </a>
+              </li>
+              <li
+                class="CopanNavigationItem-item-132"
+              >
+                <a
                   href="/contact"
                   tabindex="0"
                   target=""
@@ -155,6 +166,17 @@ exports[`pages/index should render Index page correctly 1`] = `
                       target=""
                     >
                       Home
+                    </a>
+                  </li>
+                  <li
+                    class="CopanNavigationItem-item-132 more"
+                  >
+                    <a
+                      href="/posts"
+                      tabindex="0"
+                      target=""
+                    >
+                      Blog
                     </a>
                   </li>
                   <li
