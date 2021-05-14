@@ -1,12 +1,15 @@
 import { Typography } from '@loft/copan-components';
 import React, { FC, ReactElement } from 'react';
 
+export type PostData = {
+  id: string;
+  date: string;
+  title: string;
+  contentHtml: string;
+};
+
 export type PostProps = {
-  post: {
-    title: string;
-    date: string;
-    contentHtml: string;
-  };
+  post: PostData;
 };
 
 export const Post: FC<PostProps> = ({ post }: PostProps): ReactElement => {

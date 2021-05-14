@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import { Layout } from '../../components/Layout';
-import { Post } from '../../components/Post/Post';
+import { Post, PostData } from '../../components/Post/Post';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id);
+  const postData = await getPostData(params.id.toString());
   return {
     props: {
       postData,
@@ -23,7 +23,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const PostPage = ({ postData }) => {
+type PostPageProps = {
+  postData: PostData;
+};
+
+const PostPage = ({ postData }: PostPageProps) => {
   return (
     <Layout withHeader>
       <Head>

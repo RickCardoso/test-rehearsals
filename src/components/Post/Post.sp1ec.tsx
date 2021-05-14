@@ -4,6 +4,7 @@ import { Post, PostProps } from './Post';
 
 const setup = (props?: PostProps) => render(<Post {...props} />);
 
+const id = 'an id';
 const title = 'a title';
 const date = 'a date';
 const contentHtml = 'a content';
@@ -11,7 +12,7 @@ const contentHtml = 'a content';
 describe('Post: Post', () => {
   describe('Rendering', () => {
     beforeEach(() => {
-      setup({ post: { title, date, contentHtml } });
+      setup({ post: { id, title, date, contentHtml } });
     });
     it('should render component elements', () => {
       expect(screen.getByText(title)).toBeInTheDocument();

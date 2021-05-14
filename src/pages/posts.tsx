@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import { Layout } from '../components';
+import { PostData } from '../components/Post/Post';
 import { getSortedPostsData } from '../lib/posts';
 import utilStyles from '../styles/utils.module.scss';
 
@@ -12,12 +13,6 @@ export const getStaticProps: GetStaticProps = async () => {
       allPostsData,
     },
   };
-};
-
-type PostData = {
-  id: string;
-  date: string;
-  title: string;
 };
 
 type PostPageProps = {
