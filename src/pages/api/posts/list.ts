@@ -1,10 +1,11 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import { IncomingMessage, ServerResponse } from 'http';
 import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
-export default function postsListhandler(req, res) {
+export default function postsListhandler(req: IncomingMessage, res: ServerResponse) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
