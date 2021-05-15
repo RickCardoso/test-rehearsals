@@ -13,6 +13,7 @@ pipeline/lint:
 
 pipeline/test/unit/coverage:
 	make pipeline/image/base/build
+	docker cp ./jest.setup.js unit_test:/app/jest.setup.js
 	docker run --rm -v $$GITHUB_WORKSPACE/coverage:/app/coverage $(IMAGE_NAME):base npm run test:coverage
 
 pipeline/test/e2e:
