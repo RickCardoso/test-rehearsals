@@ -5,7 +5,7 @@ import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
-export default function postsListhandler(req: NextApiRequest, res: NextApiResponse) {
+export default function postsListhandler(_req: NextApiRequest, res: NextApiResponse) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
