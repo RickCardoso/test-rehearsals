@@ -1,10 +1,10 @@
 import fs from 'fs';
-import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
-export default function postsIdshandler(req: IncomingMessage, res: ServerResponse) {
+export default function postsIdshandler(req: NextApiRequest, res: NextApiResponse) {
   const fileNames = fs.readdirSync(postsDirectory);
 
   // Returns an array that looks like this:

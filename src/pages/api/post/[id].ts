@@ -1,13 +1,13 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 import remark from 'remark';
 import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
-export default async function postHandler(req: IncomingMessage, res: ServerResponse) {
+export default async function postHandler(req: NextApiRequest, res: NextApiResponse) {
   const {
     query: { id },
     method,

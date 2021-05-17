@@ -1,11 +1,11 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
-export default function postsListhandler(req: IncomingMessage, res: ServerResponse) {
+export default function postsListhandler(req: NextApiRequest, res: NextApiResponse) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
