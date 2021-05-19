@@ -4,10 +4,10 @@ import Link from 'next/link';
 import React from 'react';
 import { Layout } from '../../components/Layout';
 import { Post, PostData } from '../../components/Post/Post';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllPostIds } from '../../lib/posts';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id.toString());
+  const postData = params; //await getPostData(params.id.toString());
   return {
     props: {
       postData,
