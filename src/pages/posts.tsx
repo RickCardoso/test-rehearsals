@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
