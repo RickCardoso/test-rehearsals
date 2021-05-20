@@ -6,7 +6,7 @@ import { Layout } from '../../components/Layout';
 import { Post, PostData } from '../../components/Post/Post';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = params; // (await axios.get(`/api/post/${params.id.toString()}`)).data;
+  const postData: any = params; // (await axios.get(`/api/post/${params.id.toString()}`)).data;
   return {
     props: {
       postData,
@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = null; // (await axios.get('/api/posts/ids')).data;
+  const paths: string[] = []; // (await axios.get('/api/posts/ids')).data;
   return {
     paths,
     fallback: false,
