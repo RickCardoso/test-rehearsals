@@ -4,10 +4,9 @@ import Link from 'next/link';
 import React from 'react';
 import { Layout } from '../../components/Layout';
 import { Post, PostData } from '../../components/Post/Post';
-import { getAllPostIds } from '../../lib/posts';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = params; //await getPostData(params.id.toString());
+  const postData: any = params; // (await axios.get(`/api/post/${params.id.toString()}`)).data;
   return {
     props: {
       postData,
@@ -16,7 +15,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds();
+  const paths: string[] = []; // (await axios.get('/api/posts/ids')).data;
   return {
     paths,
     fallback: false,

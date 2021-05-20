@@ -1,4 +1,5 @@
 import { CopanProvider } from '@loft/copan-components';
+import axios from 'axios';
 import App, { AppContext, AppInitialProps } from 'next/app';
 import { Router } from 'next/dist/client/router';
 import Head from 'next/head';
@@ -8,6 +9,11 @@ import { createIntl, createIntlCache, IntlProvider } from 'react-intl';
 import { Store } from 'redux';
 import messages from '../lang/pt';
 import { wrapper } from '../store';
+
+axios.defaults.baseURL =
+  process.env.RUNTIME_ENV === 'development'
+    ? 'http://localhost:3000/'
+    : 'https://test-rehearsals.vercel.app';
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start();

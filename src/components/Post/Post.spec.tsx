@@ -16,8 +16,17 @@ describe('<Post />', () => {
     beforeEach(() => {
       setup({ post: { id, title, date, contentHtml } });
     });
-    it('should render component elements', () => {
+
+    it('should render title', () => {
       expect(screen.getByText(title)).toBeInTheDocument();
+    });
+
+    it('should render date', () => {
+      expect(screen.getByText(date)).toBeInTheDocument();
+    });
+
+    it('should render content', () => {
+      expect(screen.getByText(contentHtml)).toBeInTheDocument();
     });
   });
 });
