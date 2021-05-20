@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -8,7 +7,7 @@ import { PostData } from '../components/Post/Post';
 import utilStyles from '../styles/utils.module.scss';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = (await axios.get('/api/posts/list')).data;
+  const allPostsData = []; // (await axios.get('/api/posts/list')).data;
   return {
     props: {
       allPostsData,

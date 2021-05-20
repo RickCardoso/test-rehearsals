@@ -10,7 +10,10 @@ import { Store } from 'redux';
 import messages from '../lang/pt';
 import { wrapper } from '../store';
 
-axios.defaults.baseURL = 'http://localhost:3000/';
+axios.defaults.baseURL =
+  process.env.RUNTIME_ENV === 'development'
+    ? 'http://localhost:3000/'
+    : 'https://test-rehearsals.vercel.app';
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start();
